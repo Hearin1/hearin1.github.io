@@ -3,104 +3,154 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Merrik Wright – CS‑499 ePortfolio</title>
-  <!-- Page description for search and sharing -->
-  <meta name="description" content="CS‑499 ePortfolio showcasing a professional self‑assessment, enhanced artifacts, and a code‑review screencast." />
-  <!-- Open Graph metadata -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Merrik Wright – CS‑499 ePortfolio" />
-  <meta property="og:description" content="Explore my computer science capstone portfolio: a professional self‑assessment, improved artifacts across software design, algorithms and data structures, databases, and a code review." />
-  <meta property="og:image" content="/assets/img/profile-preview.jpg" />
-  <meta property="og:url" content="https://hearin1.github.io/" />
-  <meta property="og:site_name" content="CS‑499 ePortfolio" />
-  <!-- Twitter card metadata -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Merrik Wright – CS‑499 ePortfolio" />
-  <meta name="twitter:description" content="Explore my computer science capstone portfolio: a professional self‑assessment, improved artifacts across software design, algorithms and data structures, databases, and a code review." />
-  <meta name="twitter:image" content="/assets/img/profile-preview.jpg" />
-  <!-- Styles -->
+
+  <title>Merrik Wright – CS-499 ePortfolio</title>
+  <meta name="description" content="CS-499 ePortfolio showcasing a professional self-assessment, enhanced artifacts (TRAVLR), and a code-review screencast." />
+
+  <!-- Social sharing (optional preview image: /assets/img/preview.jpg) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Merrik Wright – CS-499 ePortfolio">
+  <meta property="og:description" content="Self-assessment, enhanced TRAVLR artifact, and code-review video.">
+  <meta property="og:url" content="https://hearin1.github.io/">
+  <meta property="og:image" content="/assets/img/preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="icon" href="/assets/img/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
 </head>
+
 <body>
-<header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="/">Merrik Wright</a>
-    <a href="/self-assessment.html">Self‑Assessment</a>
-    <a href="/artifacts/travlr.html">TRAVLR Artifact</a>
-    <a href="/code-review.html">Code Review</a>
-  </nav>
-</header>
+  <!-- Header / Global Nav -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="/">Merrik Wright</a>
+      <a href="/self-assessment.html">Self-Assessment</a>
+      <a href="/artifacts/travlr.html">TRAVLR Artifact</a>
+      <a href="/code-review.html">Code Review</a>
+      <a href="https://github.com/Hearin1" aria-label="GitHub (opens in new tab)">GitHub</a>
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" aria-label="LinkedIn (opens in new tab)">LinkedIn</a>
+    </nav>
+  </header>
 
-<main class="container">
-  <!-- Hero Section -->
-  <section class="hero" style="margin-top:2rem;">
-    <h1>Welcome to My CS‑499 ePortfolio</h1>
-    <p class="lead">This site showcases the culmination of my Bachelor of Science in Computer Science. Inside you'll find a reflective self‑assessment, detailed artifact narratives with enhancements spanning software design, algorithms & data structures, and databases, plus a code‑review screencast explaining my process.</p>
-    <div class="cta">
-      <a class="btn" href="/self-assessment.html">Read Self‑Assessment</a>
-      <a class="btn ghost" href="/artifacts/travlr.html">View TRAVLR Artifact</a>
-    </div>
-  </section>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">CS-499 ePortfolio</h1>
+      <p class="lead">
+        A concise, professional showcase of my growth in software design & engineering, algorithms & data structures,
+        databases, and security—presented with clear narratives and working code.
+      </p>
+      <div class="cta">
+        <a class="btn" href="/self-assessment.html">Read Self-Assessment</a>
+        <a class="btn ghost" href="/artifacts/travlr.html">View TRAVLR Enhancements</a>
+      </div>
+    </section>
 
-  <!-- Self‑Assessment Summary -->
-  <section class="section" style="margin-top:3rem;">
-    <h2>Self‑Assessment Highlights</h2>
-    <p>My self‑assessment reflects on collaboration and stakeholder communication, algorithmic problem solving, software design and database skills, and a security‑first mindset. Here are the themes you’ll read about:</p>
-    <ul class="checklist">
-      <li><strong>Collaboration & Communication:</strong> How I managed iterations, documented decisions, and integrated feedback.</li>
-      <li><strong>Algorithms & Data Structures:</strong> Optimizing authentication flows and data validation for efficiency and clarity.</li>
-      <li><strong>Security Mindset:</strong> Applying encryption, hashing, input validation, and least‑privilege principles throughout my work.</li>
-    </ul>
-    <p>For a deeper dive, read the full <a href="/self-assessment.html" class="hoverline">Self‑Assessment</a>.</p>
-  </section>
+    <!-- Key Sections as Cards -->
+    <section aria-labelledby="sections-title" style="margin-top: var(--space-6);">
+      <h2 id="sections-title">Explore</h2>
 
-  <!-- Artifact Summary -->
-  <section class="section" style="margin-top:3rem;">
-    <h2>Featured Artifact: TRAVLR</h2>
-    <p>TRAVLR is a full‑stack travel booking platform originally built in my Full‑Stack Development course. For this capstone, I enhanced it across three categories:</p>
-    <div class="card" style="padding:1rem; margin-bottom:1rem;">
-      <h3>Software Design & Engineering</h3>
-      <p>Implemented a modular encryption utility for sensitive data, added a user account/settings API, and refactored for maintainability.</p>
-    </div>
-    <div class="card" style="padding:1rem; margin-bottom:1rem;">
-      <h3>Algorithms & Data Structures</h3>
-      <p>Streamlined authentication with constant‑time hashing, consolidated validations, and optimized data flows.</p>
-    </div>
-    <div class="card" style="padding:1rem;">
-      <h3>Databases</h3>
-      <p>Extended the MongoDB schema to include user settings, added CRUD operations with validation, and ensured proper indexing.</p>
-    </div>
-    <p>Explore the full narrative and see both the original and enhanced code on the <a href="/artifacts/travlr.html" class="hoverline">TRAVLR page</a>.</p>
-  </section>
+      <div class="cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
+        <!-- Card: Self-Assessment -->
+        <article class="card" role="article">
+          <div class="card-content">
+            <h3 class="card-title">Professional Self-Assessment</h3>
+            <p>
+              An executive overview of collaboration, stakeholder communication, algorithms/DS, software engineering,
+              databases, and security—plus how the artifacts fit together.
+            </p>
+            <p><a class="hoverline" href="/self-assessment.html">Open self-assessment →</a></p>
+          </div>
+        </article>
 
-  <!-- Code Review Summary -->
-  <section class="section" style="margin-top:3rem;">
-    <h2>Informal Code Review</h2>
-    <p>I conducted a code review before enhancing TRAVLR to identify structural, logical, and security improvements. In the screencast, I explain existing functionality, highlight pain points, and outline the planned enhancements. Watch the video on the <a href="/code-review.html" class="hoverline">Code Review page</a>.</p>
-  </section>
+        <!-- Card: TRAVLR -->
+        <article class="card" role="article">
+          <div class="card-content">
+            <h3 class="card-title">TRAVLR Artifact</h3>
+            <p>
+              Original + enhanced full-stack app (MEAN). Highlights: encryption & hashing, modular account settings,
+              tighter validation flows, and MongoDB schema updates with secure CRUD.
+            </p>
+            <p><a class="hoverline" href="/artifacts/travlr.html">Open TRAVLR narrative →</a></p>
+          </div>
+        </article>
 
-  <!-- Contact Section -->
-  <section class="section" style="margin-top:3rem;">
-    <h2>Get in Touch</h2>
-    <p>Have questions or want to learn more about my work? Feel free to reach out or explore my other repositories:</p>
-    <ul class="checklist">
-      <li>Email: <a href="mailto:your.email@example.com" class="hoverline">your.email@example.com</a></li>
-      <li>GitHub: <a href="https://github.com/Hearin1" class="hoverline" target="_blank">github.com/Hearin1</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/your‑profile" class="hoverline" target="_blank">linkedin.com/in/your‑profile</a></li>
-    </ul>
-  </section>
-</main>
+        <!-- Card: Code Review -->
+        <article class="card" role="article">
+          <div class="card-content">
+            <h3 class="card-title">Code-Review Screencast</h3>
+            <p>
+              Informal walkthrough of existing functionality, code analysis (structure, testing, security),
+              and the enhancements that address those findings.
+            </p>
+            <p><a class="hoverline" href="/code-review.html">Watch the review →</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<footer class="site-footer">
-  <small>© <span id="year"></span> Merrik Wright</small>
-</footer>
-<script>
-  // Set current year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
-  // External links open in new tab
-  for (const a of document.querySelectorAll('a[href^="http"]')) {
-    if (a.host !== location.host) { a.target = "_blank"; a.rel = "noopener"; }
-  }
-</script>
+    <!-- Featured Artifact Snapshot -->
+    <section aria-labelledby="featured-title" style="margin-top: var(--space-6);">
+      <h2 id="featured-title">Featured: TRAVLR at a Glance</h2>
+
+      <article class="card">
+        <div class="card-content">
+          <h3 class="card-title">What changed technically?</h3>
+          <ul>
+            <li><strong>Software Design & Engineering:</strong> AES utility for reversible data; bcrypt for credentials; modular account-settings API; refactoring for readability and testability.</li>
+            <li><strong>Algorithms & DS:</strong> Early-exit validation, constant-time compare via bcrypt, deduped logic paths, and lean projections to reduce I/O.</li>
+            <li><strong>Databases:</strong> Extended MongoDB schema for user settings, indexes/constraints, and a safe backfill routine for existing documents.</li>
+            <li><strong>Security:</strong> Input whitelists, non-enumerating errors, least-privilege updates, secrets via env vars (no secrets in repo).</li>
+          </ul>
+
+          <p class="note" style="margin-top:.5rem;">
+            See the full narrative for diffs, rationale, and outcome mapping.
+            <a class="hoverline" href="/artifacts/travlr.html">Read more →</a>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Quick Links -->
+    <section aria-labelledby="links-title" style="margin-top: var(--space-6);">
+      <h2 id="links-title">Quick Links</h2>
+      <div class="cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+        <article class="card"><div class="card-content">
+          <h3 class="card-title">Original Code</h3>
+          <p><a class="hoverline" href="YOUR_ORIGINAL_CODE_URL" target="_blank" rel="noopener">Repository/branch →</a></p>
+        </div></article>
+
+        <article class="card"><div class="card-content">
+          <h3 class="card-title">Enhanced Code</h3>
+          <p><a class="hoverline" href="YOUR_ENHANCED_CODE_URL" target="_blank" rel="noopener">Repository/branch →</a></p>
+        </div></article>
+
+        <article class="card"><div class="card-content">
+          <h3 class="card-title">Resume (optional)</h3>
+          <p><a class="hoverline" href="/assets/resume/Resume.pdf" target="_blank" rel="noopener">Download PDF →</a></p>
+        </div></article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section aria-labelledby="contact-title" style="margin-top: var(--space-6);">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email: <a class="hoverline" href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></p>
+      <p>GitHub: <a class="hoverline" href="https://github.com/Hearin1" target="_blank" rel="noopener">github.com/Hearin1</a></p>
+      <p>LinkedIn: <a class="hoverline" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">linkedin.com/in/YOUR-LINKEDIN</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="y"></span> Merrik Wright</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Open external links in new tabs; keep internal links same-tab
+    for (const a of document.querySelectorAll('a[href^=\"http\"]')) {
+      if (a.host !== location.host) { a.target = \"_blank\"; a.rel = \"noopener\"; }
+    }
+  </script>
 </body>
 </html>
