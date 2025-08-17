@@ -5,85 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Professional Self-Assessment – CS-499</title>
   <meta name="description" content="Professional self-assessment introducing the ePortfolio and summarizing strengths across collaboration, communication, algorithms and data structures, software engineering, databases, security, and UX." />
-  <meta name="theme-color" content="#0b3d5c" />
-  <meta property="og:title" content="Professional Self-Assessment – CS-499" />
-  <meta property="og:description" content="Overview of capstone ePortfolio, artifacts, and evidence of growth across CS program outcomes." />
-  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <!-- Header + layout styles copied from code-review.html for pixel-match -->
   <style>
-    /* Light enhancements in case the global stylesheet is minimal */
-    :root {
-      --ink: #0f172a;
-      --muted: #475569;
-      --brand: #0b3d5c;
-      --bg-note: #f8fafc;
-      --border: #e2e8f0;
-    }
-    .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
     .site-header { border-bottom: 1px solid #e2e8f0; background:#fff; position: sticky; top: 0; z-index: 50; }
-    .nav { display: flex; gap: 1rem; align-items: center; padding: .75rem 1rem; }
-    .nav .brand { font-weight: 700; color: var(--brand); text-decoration: none; margin-right: auto; }
-    .nav a { color: var(--ink); text-decoration: none; padding: .25rem .5rem; border-radius: .375rem; }
-    .nav a.active, .nav a[aria-current="page"] { background: #e6f1f8; color: var(--brand); }
+    .nav { display: flex; gap: 1rem; align-items: center; padding: .75rem 1rem; max-width:1100px; margin:0 auto; }
+    .nav .brand { font-weight: 700; color: #0b3d5c; text-decoration: none; margin-right: auto; }
+    .nav a { color: #0f172a; text-decoration: none; padding: .25rem .5rem; border-radius: .375rem; }
+    .nav a.active, .nav a[aria-current="page"] { background: #e6f1f8; color: #0b3d5c; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
     h1, h2, h3 { line-height: 1.2; }
     h1 { font-size: clamp(1.8rem, 2.5vw, 2.25rem); margin: 1rem 0 .5rem; }
     h2 { font-size: clamp(1.35rem, 2vw, 1.6rem); margin-top: 2rem; margin-bottom: .5rem; }
     h3 { font-size: 1.1rem; margin-top: 1.25rem; margin-bottom: .25rem; }
-    p { color: var(--ink); line-height: 1.65; }
-    .lede { color: var(--muted); font-size: 1.05rem; }
-    .grid { display: grid; gap: 1rem; }
-    .grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .card { border: 1px solid var(--border); border-radius: .75rem; padding: 1rem; background: white; }
+    p  { color:#0f172a; line-height:1.65; }
+
+    /* simple cards to keep your content tidy, but toned to match code-review look */
+    .card { border: 1px solid #e2e8f0; border-radius: .75rem; padding: 1rem; background: #fff; }
     .list { margin: .5rem 0 0; padding-left: 1.2rem; }
     .list li { margin: .3rem 0; }
-    .kpi { display: flex; gap: .75rem; align-items: baseline; color: var(--brand); font-weight: 700; }
-    .note { background: var(--bg-note); border: 1px dashed var(--border); padding: .75rem; border-radius: .5rem; color: var(--muted); }
     table { width: 100%; border-collapse: collapse; margin-top: .5rem; }
-    th, td { border: 1px solid var(--border); padding: .6rem .5rem; text-align: left; vertical-align: top; }
+    th, td { border: 1px solid #e2e8f0; padding: .6rem .5rem; text-align: left; vertical-align: top; }
     th { background: #f1f5f9; }
-    .site-footer { border-top: 1px solid var(--border); padding: 1rem; margin-top: 2rem; color: var(--muted); }
+
+    footer.site-footer { border-top: 1px solid #e2e8f0; padding: 1rem; margin-top: 2rem; color: #475569; text-align:center; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
   </style>
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
 
+<!-- Header (identical to code-review.html) -->
 <header class="site-header" role="banner">
   <nav class="nav" aria-label="Primary">
     <a class="brand" href="/">Merrik Wright</a>
-    <a href="/" aria-current="{{ currentPage === 'home' ? 'page' : null }}">Home</a>
-    <a href="/self-assessment.html" aria-current="{{ currentPage === 'self' ? 'page' : null }}">Self‑Assessment</a>
-    <a href="/artifacts/travlr.html" aria-current="{{ currentPage === 'travlr' ? 'page' : null }}">TRAVLR Artifact</a>
-    <a href="/code-review.html" aria-current="{{ currentPage === 'review' ? 'page' : null }}">Code Review</a>
-    <a href="/contact.html" aria-current="{{ currentPage === 'contact' ? 'page' : null }}">Contact</a>
+    <a href="/"               >Home</a>
+    <a href="/self-assessment.html" aria-current="page">Self-Assessment</a>
+    <a href="/artifacts/travlr.html">TRAVLR Artifact</a>
+    <a href="/code-review.html">Code Review</a>
+    <a href="/contact.html">Contact</a>
   </nav>
 </header>
-
 
 <main id="main" class="container" role="main">
   <header>
     <h1>Professional Self-Assessment</h1>
-    <p class="lede">This ePortfolio introduces my capstone work and documents growth across software design and engineering, algorithms and data structures, databases, security, and user experience. It explains how the artifacts fit together, why specific decisions were made, and how those decisions improve maintainability, security, and clarity for future contributors.</p>
+    <p>This ePortfolio introduces my capstone work and documents growth across software design and engineering, algorithms and data structures, databases, security, and user experience. It explains how the artifacts fit together, why specific decisions were made, and how those decisions improve maintainability, security, and clarity for future contributors.</p>
   </header>
 
   <section aria-labelledby="exec-summary">
     <h2 id="exec-summary">Executive Summary</h2>
-    <div class="grid cols-2">
-      <article class="card">
-        <h3>Focus Areas</h3>
-        <ul class="list">
-          <li>Modular service design and separation of concerns</li>
-          <li>Secure authentication and data handling</li>
-          <li>MongoDB schema discipline and safe migrations</li>
-          <li>Validation, error shaping, and observability</li>
-          <li>Clear stakeholder communication and review loops</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Primary Artifact</h3>
-        <p>TRAVLR is the anchor artifact for this capstone. Enhancements center on login and settings, a dedicated encryption utility, a constrained user schema with defaults, and a reliable update path that is easy to test and reason about.</p>
-        <div class="kpi"><span>Register → Login → Update Settings → Re-login test flow verified</span></div>
-      </article>
+    <div class="card">
+      <h3>Focus Areas</h3>
+      <ul class="list">
+        <li>Modular service design and separation of concerns</li>
+        <li>Secure authentication and data handling</li>
+        <li>MongoDB schema discipline and safe migrations</li>
+        <li>Validation, error shaping, and observability</li>
+        <li>Clear stakeholder communication and review loops</li>
+      </ul>
+      <h3 style="margin-top:1rem;">Primary Artifact</h3>
+      <p>TRAVLR is the anchor artifact for this capstone. Enhancements center on login and settings, a dedicated encryption utility, a constrained user schema with defaults, and a reliable update path that is easy to test and reason about.</p>
+      <p><strong>Register → Login → Update Settings → Re-login</strong> test flow verified.</p>
     </div>
   </section>
 
@@ -175,7 +159,7 @@
         <li>Database assertions: unique indexes applied, projections return only required fields</li>
         <li>Security checks: no secret values in logs, no sensitive fields in error payloads</li>
       </ul>
-      <p class="note">Where automation is available, these checks can be expressed as lightweight API tests that run in CI. The goal is fast feedback on regressions without heavy fixtures.</p>
+      <p style="background:#f8fafc;border:1px dashed #e2e8f0;padding:.75rem;border-radius:.5rem;color:#475569;">Where automation is available, these checks can be expressed as lightweight API tests that run in CI. The goal is fast feedback on regressions without heavy fixtures.</p>
     </div>
   </section>
 
@@ -186,30 +170,26 @@
 
   <section aria-labelledby="next-steps">
     <h2 id="next-steps">Next Steps</h2>
-    <div class="grid cols-2">
-      <article class="card">
-        <h3>Planned Enhancements</h3>
-        <ul class="list">
-          <li>Introduce basic API contract tests around auth and settings</li>
-          <li>Add rate limiting on login to reduce automated guessing attempts</li>
-          <li>Harden input validation with shared schemas between client and server where appropriate</li>
-          <li>Expand logging fields for observability without exposing sensitive data</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Team Practices</h3>
-        <ul class="list">
-          <li>Keep change size small, keep feedback fast</li>
-          <li>Prefer documented helpers over repeating inline logic</li>
-          <li>Write short stakeholder notes that explain impact and risk</li>
-        </ul>
-      </article>
+    <div class="card">
+      <h3>Planned Enhancements</h3>
+      <ul class="list">
+        <li>Introduce basic API contract tests around auth and settings</li>
+        <li>Add rate limiting on login to reduce automated guessing attempts</li>
+        <li>Harden input validation with shared schemas between client and server where appropriate</li>
+        <li>Expand logging fields for observability without exposing sensitive data</li>
+      </ul>
+      <h3 style="margin-top:1rem;">Team Practices</h3>
+      <ul class="list">
+        <li>Keep change size small, keep feedback fast</li>
+        <li>Prefer documented helpers over repeating inline logic</li>
+        <li>Write short stakeholder notes that explain impact and risk</li>
+      </ul>
     </div>
   </section>
 
   <section aria-labelledby="details">
     <h2 id="details">Detailed Evidence and Rationale</h2>
-    <article class="card">
+    <div class="card">
       <h3>Design Choices</h3>
       <ul class="list">
         <li><strong>Separation of concerns</strong> keeps cryptography, validation, and persistence isolated so each part can be tested and changed without side effects.</li>
@@ -217,9 +197,7 @@
         <li><strong>Schema defaults and constraints</strong> turn runtime checks into data guarantees, which reduces code in callers and prevents malformed records.</li>
         <li><strong>Consistent error shapes</strong> make failures predictable for clients and easier to observe in logs and dashboards.</li>
       </ul>
-    </article>
 
-    <article class="card">
       <h3>Security Considerations</h3>
       <ul class="list">
         <li>Passwords are never stored in a reversible format and are hashed with a per-record salt.</li>
@@ -227,18 +205,14 @@
         <li>Responses avoid leaking internal structure or hints that could help user enumeration.</li>
         <li>Database updates operate with least privilege and project only the fields that are needed.</li>
       </ul>
-    </article>
 
-    <article class="card">
       <h3>Developer Experience</h3>
       <ul class="list">
         <li>Small PRs with checklists, short videos, and rollback notes make review faster and clearer.</li>
         <li>Helpers and JSDoc reduce onboarding time by making intent explicit.</li>
         <li>Predictable flows mean fewer places to instrument and fewer places to debug.</li>
       </ul>
-    </article>
-
-    <p class="note">Any questions please email merrik.wright@snhu.edu</p>
+    </div>
   </section>
 </main>
 
@@ -247,7 +221,7 @@
 </footer>
 
 <script>
-  // Current year and external-link behavior
+  // Year + external links
   document.getElementById('y').textContent = new Date().getFullYear();
   for (const a of document.querySelectorAll('a[href^="http"]')) {
     if (a.host !== location.host) { a.target = "_blank"; a.rel = "noopener"; }
