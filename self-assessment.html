@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Self-Assessment – CS-499</title>
+  <meta name="description" content="Professional self-assessment introducing the ePortfolio and summarizing strengths across collaboration, communication, algorithms/DS, software engineering, databases, and security." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="/">Merrik Wright</a>
+    <a class="active" href="/self-assessment.html">Self-Assessment</a>
+    <a href="/artifacts/travlr.html">TRAVLR Artifact</a>
+    <a href="/code-review.html">Code Review</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Professional Self-Assessment</h1>
+
+  <p><em>Overview</em> — This ePortfolio introduces my capstone work, demonstrating growth in software design/engineering, algorithms and data structures, databases, and security, with clear communication and UI/UX.</p>
+
+  <h2>Strengths & Evidence</h2>
+  <p><strong>Collaboration & Stakeholder Communication.</strong> <span class="todo">TODO: 1–2 short paragraphs with a concrete example of teamwork, code review interactions, or stakeholder updates.</span></p>
+  <p><strong>Algorithms & Data Structures; Software Engineering & Databases.</strong> <span class="todo">TODO: 1–2 paragraphs tying TRAVLR changes to algorithmic thinking, refactoring, testing, schema design/migrations, and performance gains.</span></p>
+  <p><strong>Security Mindset.</strong> <span class="todo">TODO: 1 paragraph on how security informed decisions (input validation, hashing, encryption, least privilege), plus any secure-coding class takeaways.</span></p>
+
+  <h2>How the Artifacts Fit Together</h2>
+  <p>TRAVLR is the central artifact. The enhancements span software design (encryption module, modular account settings), algorithms/DS (secure authentication flow; validation logic), and databases (MongoDB schema updates, CRUD for settings). The portfolio pages map each enhancement to course outcomes and include a code-review video to contextualize decisions.</p>
+
+  <p class="note">Tip: keep paragraphs short and scannable; use concrete examples and numbers where possible.</p>
+</main>
+
+<footer class="site-footer">
+  <small>© <span id="y"></span> Merrik Wright</small>
+</footer>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  for (const a of document.querySelectorAll('a[href^="http"]')) {
+    if (a.host !== location.host) { a.target = "_blank"; a.rel = "noopener"; }
+  }
+</script>
+</body>
+</html>
