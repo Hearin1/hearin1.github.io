@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Code Review – CS-499</title>
+  <meta name="description" content="Informal code review video: existing functionality, code analysis, planned enhancements, and outcome alignment." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="/">Merrik Wright</a>
+    <a href="/self-assessment.html">Self-Assessment</a>
+    <a href="/artifacts/travlr.html">TRAVLR Artifact</a>
+    <a class="active" href="/code-review.html">Code Review</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Informal Code Review (Video)</h1>
+  <p>This screencast walks through original functionality, identifies improvement targets (structure, logic, efficiency, security, testing, documentation), and previews the enhancements that address them.</p>
+  <div class="video">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/VIDEO_ID"
+      title="CS-499 Code Review"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <h2>Highlights</h2>
+  <ul class="checklist">
+    <li>Existing functionality overview</li>
+    <li>Code analysis (structure, security, testing, documentation)</li>
+    <li>Planned enhancements and outcome mapping</li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <small>© <span id="y"></span> Merrik Wright</small>
+</footer>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  for (const a of document.querySelectorAll('a[href^="http"]')) {
+    if (a.host !== location.host) { a.target = "_blank"; a.rel = "noopener"; }
+  }
+</script>
+</body>
+</html>
