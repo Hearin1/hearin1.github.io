@@ -382,3 +382,115 @@ a.hoverline:hover{
   #contact a.btn-floating.btn-large{ display:block; text-align:center; margin:0 auto; }
   #intro.section{ background-position-x: 30%; }
 }
+
+/* ====== NAVBAR ====== */
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid var(--divider, #ddd);
+}
+.navbar .container{
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: .8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo{
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--brand-dark, #004d40);
+  font-size: 1.15rem;
+}
+.navbar .nav-links{
+  list-style: none;       /* remove bullets */
+  margin: 0;
+  padding: 0;
+  display: flex;          /* horizontal */
+  gap: 1rem;
+}
+.navbar .nav-links a{
+  color: var(--brand-dark, #004d40);
+  text-decoration: none;
+  font-weight: 600;
+  padding: .35rem .25rem;
+  border-bottom: 2px solid transparent;
+}
+.navbar .nav-links a:hover{
+  border-bottom-color: var(--brand-dark, #004d40);
+}
+.navbar .nav-links a.active{
+  border-bottom-color: var(--brand, #008073);
+}
+
+/* ====== HERO ====== */
+.hero{
+  /* keeps your subtle grid bg while giving a premium header feel */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,0)),
+    url(/assets/img/bg.png) repeat;
+  border: 1px solid var(--divider, #ddd);
+  border-radius: 16px;
+  padding: 2.25rem 1.25rem;
+  margin: 1.25rem auto 0;
+}
+.hero .hero-content{
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: left;
+}
+.hero h1{
+  margin: 0 0 .5rem;
+  line-height: 1.2;
+}
+.hero p{
+  color: #2b3a3a;
+  margin: 0 0 1rem;
+}
+
+/* ====== BUTTONS ====== */
+.btn{
+  display: inline-block;
+  padding: .7rem 1rem;
+  border-radius: 10px;
+  background: var(--brand, #008073);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  margin-right: .5rem;
+}
+.btn:hover{ filter: brightness(1.05); }
+.btn.secondary{
+  background: #fff;
+  color: var(--brand-dark, #004d40);
+  border-color: var(--brand-dark, #004d40);
+}
+
+/* ====== CARDS GRID (Explore section) ====== */
+.cards-grid{
+  /* you inline-set this; keeping here so CSS owns layout if you remove inline later */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* Make sure our base container matches navbar width */
+.container{
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Small a11y touch */
+a:focus-visible{ outline: 2px solid #24305e; outline-offset: 2px; }
+
+/* Responsive: stack nav on small screens */
+@media (max-width: 720px){
+  .navbar .nav-links{ gap: .6rem; flex-wrap: wrap; }
+  .hero{ padding: 1.5rem 1rem; }
+}
+
