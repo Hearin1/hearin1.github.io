@@ -4,45 +4,247 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Professional Self-Assessment – CS-499</title>
-  <meta name="description" content="Professional self-assessment introducing the ePortfolio and summarizing strengths across collaboration, communication, algorithms/DS, software engineering, databases, and security." />
+  <meta name="description" content="Professional self-assessment introducing the ePortfolio and summarizing strengths across collaboration, communication, algorithms and data structures, software engineering, databases, security, and UX." />
+  <meta name="theme-color" content="#0b3d5c" />
+  <meta property="og:title" content="Professional Self-Assessment – CS-499" />
+  <meta property="og:description" content="Overview of capstone ePortfolio, artifacts, and evidence of growth across CS program outcomes." />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    /* Light enhancements in case the global stylesheet is minimal */
+    :root {
+      --ink: #0f172a;
+      --muted: #475569;
+      --brand: #0b3d5c;
+      --bg-note: #f8fafc;
+      --border: #e2e8f0;
+    }
+    .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+    .site-header { border-bottom: 1px solid var(--border); }
+    .nav { display: flex; gap: 1rem; align-items: center; padding: .75rem 1rem; }
+    .nav .brand { font-weight: 700; color: var(--brand); text-decoration: none; margin-right: auto; }
+    .nav a { color: var(--ink); text-decoration: none; padding: .25rem .5rem; border-radius: .375rem; }
+    .nav a.active, .nav a[aria-current="page"] { background: #e6f1f8; color: var(--brand); }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { font-size: clamp(1.8rem, 2.5vw, 2.25rem); margin: 1rem 0 .5rem; }
+    h2 { font-size: clamp(1.35rem, 2vw, 1.6rem); margin-top: 2rem; margin-bottom: .5rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.25rem; margin-bottom: .25rem; }
+    p { color: var(--ink); line-height: 1.65; }
+    .lede { color: var(--muted); font-size: 1.05rem; }
+    .grid { display: grid; gap: 1rem; }
+    .grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { border: 1px solid var(--border); border-radius: .75rem; padding: 1rem; background: white; }
+    .list { margin: .5rem 0 0; padding-left: 1.2rem; }
+    .list li { margin: .3rem 0; }
+    .kpi { display: flex; gap: .75rem; align-items: baseline; color: var(--brand); font-weight: 700; }
+    .note { background: var(--bg-note); border: 1px dashed var(--border); padding: .75rem; border-radius: .5rem; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin-top: .5rem; }
+    th, td { border: 1px solid var(--border); padding: .6rem .5rem; text-align: left; vertical-align: top; }
+    th { background: #f1f5f9; }
+    .site-footer { border-top: 1px solid var(--border); padding: 1rem; margin-top: 2rem; color: var(--muted); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav">
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header" role="banner">
+  <nav class="nav" aria-label="Primary">
     <a class="brand" href="/">Merrik Wright</a>
-    <a class="active" href="/self-assessment.html">Self-Assessment</a>
+    <a class="active" aria-current="page" href="/self-assessment.html">Self-Assessment</a>
     <a href="/artifacts/travlr.html">TRAVLR Artifact</a>
     <a href="/code-review.html">Code Review</a>
   </nav>
 </header>
 
-<main class="container">
-  <h1>Professional Self-Assessment</h1>
+<main id="main" class="container" role="main">
+  <header>
+    <h1>Professional Self-Assessment</h1>
+    <p class="lede">This ePortfolio introduces my capstone work and documents growth across software design and engineering, algorithms and data structures, databases, security, and user experience. It explains how the artifacts fit together, why specific decisions were made, and how those decisions improve maintainability, security, and clarity for future contributors.</p>
+  </header>
 
-  <p><em>Overview</em> — This ePortfolio introduces my capstone work, demonstrating growth in software design/engineering, algorithms and data structures, databases, and security, with clear communication and UI/UX.</p>
+  <section aria-labelledby="exec-summary">
+    <h2 id="exec-summary">Executive Summary</h2>
+    <div class="grid cols-2">
+      <article class="card">
+        <h3>Focus Areas</h3>
+        <ul class="list">
+          <li>Modular service design and separation of concerns</li>
+          <li>Secure authentication and data handling</li>
+          <li>MongoDB schema discipline and safe migrations</li>
+          <li>Validation, error shaping, and observability</li>
+          <li>Clear stakeholder communication and review loops</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Primary Artifact</h3>
+        <p>TRAVLR is the anchor artifact for this capstone. Enhancements center on login and settings, a dedicated encryption utility, a constrained user schema with defaults, and a reliable update path that is easy to test and reason about.</p>
+        <div class="kpi"><span>✅</span><span>Register → Login → Update Settings → Re-login test flow verified</span></div>
+      </article>
+    </div>
+  </section>
 
-  <h2>Strengths & Evidence</h2>
-  <p><strong>Collaboration & Stakeholder Communication.</strong> During the TRAVLR enhancement cycle I treated the “site admin” persona as my primary stakeholder and managed the work in short, reviewable iterations. I opened small GitHub issues for each change (encryption utility, account-settings API, schema update) and created branch-scoped pull requests with checklists. After each slice, I recorded a short code-review walkthrough and summarized decisions in the PR description (what changed, why it changed, risks, and rollback plan). Review feedback led to concrete improvements: separating crypto from route handlers, documenting environment variables, replacing ad-hoc error strings with a consistent error shape, and wrapping all async bcrypt paths in try/catch with explicit early returns.</p>
+  <section aria-labelledby="strengths">
+    <h2 id="strengths">Strengths and Evidence</h2>
 
-<p>Peer and instructor-style reviews shaped naming, structure, and communication. For example, a comment thread on the settings update flow prompted me to remove duplicate validation logic from two routes and expose a single “validateSettings” helper, add JSDoc comments for public functions, and standardize HTTP status codes and error messages. I also posted brief stakeholder notes after each iteration (change summary, impact, and next step), which made decisions traceable and kept the “stakeholder” focus on value: safer login, clearer settings UX, and maintainable code the next developer can pick up quickly.</p>
+    <article class="card">
+      <h3>Collaboration and Stakeholder Communication</h3>
+      <p>During the TRAVLR enhancement cycle I treated the site administrator as the primary stakeholder and shipped in small, reviewable slices. Each slice had a focused pull request with a checklist, a short walkthrough, risks, and a clear rollback plan. Feedback translated to concrete changes: crypto moved out of route handlers, environment variables documented, error payloads standardized, and async bcrypt paths wrapped in try and catch with early returns.</p>
+      <p>Review threads led to a single validation helper for settings, JSDoc on public functions, and consistent status codes. I posted short stakeholder notes after each iteration that made scope, impact, and next steps easy to track and kept attention on value: safer login, clearer settings UX, and code that is straightforward to extend.</p>
+    </article>
 
-  <p><strong>Algorithms & Data Structures; Software Engineering & Databases.</strong> Algorithmic thinking showed up most in the authentication and settings flows. I reworked the login path to validate inputs up front, short-circuit on failures, and rely on indexed, single-document lookups (unique index on username/email) rather than any list scans. The compare step uses bcrypt’s constant-time comparison, and I consolidated duplicate checks into a single validator so the “happy path” stays narrow and predictable. I also reduced DB round-trips by projecting only the fields the route needs and by normalizing settings data so the update operation is a single atomic write. These changes simplify control flow, reduce error surface, and make performance behavior easier to reason about.</p>
+    <article class="card">
+      <h3>Algorithms, Data Structures, and Engineering Discipline</h3>
+      <p>Authentication follows a narrow, predictable path. Inputs are validated early, unique indexes on username and email support single-document lookups, and bcrypt comparison is handled in a constant-time manner. Duplicate checks were consolidated into one validator to reduce branching and accidental bypasses.</p>
+      <p>Database calls were simplified. Handlers project only required fields, and settings are normalized so updates can be a single atomic write. The result is less I/O, fewer code paths, and behavior that is easier to reason about and test.</p>
+      <ul class="list">
+        <li><code>util/encryption.js</code> isolates cryptographic concerns</li>
+        <li>Thin route handlers call small, testable helpers</li>
+        <li>Input validation and error shaping remove repetition and ambiguity</li>
+        <li>Schema defaults and constraints reduce defensive code in callers</li>
+      </ul>
+    </article>
 
-<p>On the engineering side, I moved cryptographic operations into a dedicated module (<code>util/encryption.js</code>) to respect single-responsibility and make testing easier. Route handlers now call small service-style helpers that do one thing well (authenticate, sanitize, encrypt/decrypt, persist). I added consistent error handling and input validation helpers, which removed repeated code and lowered complexity. For the database, I extended the user schema to include settings with defaults and constraints, and I wrote a simple migration routine to backfill existing documents safely. I verified changes with smoke tests (manual API calls/collections) for register → login → update settings → re-login, plus negative tests for invalid payloads and duplicate usernames. Net effect: fewer code paths, clearer boundaries, safer writes, and faster, more predictable I/O.</p>
+    <article class="card">
+      <h3>Security Mindset</h3>
+      <p>Credentials are hashed with salted bcrypt. Reversible encryption is limited to data that must be decrypted by the system, not for passwords. All inputs pass through an allow-list validator. Handlers update only the authenticated user record and project only necessary fields. Errors are generic to avoid user enumeration, secrets live in the environment, and logs exclude sensitive fields by design.</p>
+    </article>
+  </section>
 
- <p><strong>Security Mindset.</strong> Security guided every enhancement. Credentials are never stored reversibly; I use salted <code>bcrypt</code> hashing for passwords and reserve AES encryption for data that must be reversible. All inputs pass through a validation layer (type, length, allowed values), and handlers only whitelist fields that can be written—preventing privilege escalation via unexpected attributes. Errors are generic to avoid user enumeration, secrets live in environment variables (not in the repo), and logs intentionally exclude sensitive data. Database updates run with least-privilege assumptions (update only the specific user’s document, project only needed fields), and I avoided leaking internal structure through responses. These practices, reinforced by secure-coding coursework, produced an implementation that is resilient to common risks while remaining maintainable.</p>
+  <section aria-labelledby="fit-together">
+    <h2 id="fit-together">How the Artifacts Fit Together</h2>
+    <p>TRAVLR links the course outcomes in a single, coherent surface. The encryption module and service-style helpers show software design. The authentication pipeline and validation show algorithms and data structures used in practical control flow. The MongoDB schema and migrations show database planning, safe writes, and predictable reads. The portfolio pages reference these changes directly and include a code review video that explains design intent and tradeoffs.</p>
+  </section>
 
-  <h2>How the Artifacts Fit Together</h2>
-  <p>TRAVLR is the central artifact. The enhancements span software design (encryption module, modular account settings), algorithms/DS (secure authentication flow; validation logic), and databases (MongoDB schema updates, CRUD for settings). The portfolio pages map each enhancement to course outcomes and include a code-review video to contextualize decisions.</p>
+  <section aria-labelledby="outcome-mapping">
+    <h2 id="outcome-mapping">Outcome Mapping</h2>
+    <table aria-describedby="outcome-mapping-desc">
+      <caption id="outcome-mapping-desc" class="sr-only">Mapping of CS outcomes to artifacts and evidence</caption>
+      <thead>
+        <tr>
+          <th style="width: 22%">Course Outcome</th>
+          <th style="width: 33%">Evidence</th>
+          <th style="width: 45%">Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Software Design and Engineering</td>
+          <td>Encryption utility, service helpers, route refactors, JSDoc</td>
+          <td>Lower complexity per module, easier testing, faster onboarding for new contributors</td>
+        </tr>
+        <tr>
+          <td>Algorithms and Data Structures</td>
+          <td>Narrow authentication path, early validation, constant-time compare, reduced branching</td>
+          <td>Predictable control flow with fewer failure modes and clearer performance characteristics</td>
+        </tr>
+        <tr>
+          <td>Databases</td>
+          <td>Schema defaults and constraints, projections, single-document updates, migration routine</td>
+          <td>Safer writes and reads with fewer round trips and more consistent documents over time</td>
+        </tr>
+        <tr>
+          <td>Security</td>
+          <td>Bcrypt hashing, allow-list validation, generic errors, secret management, least privilege updates</td>
+          <td>Resilience against common risks without sacrificing maintainability</td>
+        </tr>
+        <tr>
+          <td>Communication</td>
+          <td>Small PRs, checklists, review walkthroughs, stakeholder notes</td>
+          <td>Traceable decisions and faster, clearer review cycles</td>
+        </tr>
+        <tr>
+          <td>UX and Accessibility</td>
+          <td>Clear error messages, consistent forms, predictable flows, semantic markup</td>
+          <td>Lower cognitive load, clearer recovery from errors, better keyboard and screen reader support</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-  <p class="note">Tip: keep paragraphs short and scannable; use concrete examples and numbers where possible.</p>
+  <section aria-labelledby="testing">
+    <h2 id="testing">Testing and Verification</h2>
+    <div class="card">
+      <h3>Manual and Scripted Checks</h3>
+      <ul class="list">
+        <li>Smoke path: register, login, update settings, logout, re-login</li>
+        <li>Negative cases: invalid payloads, duplicate usernames, unauthorized updates</li>
+        <li>Database assertions: unique indexes applied, projections return only required fields</li>
+        <li>Security checks: no secret values in logs, no sensitive fields in error payloads</li>
+      </ul>
+      <p class="note">Where automation is available, these checks can be expressed as lightweight API tests that run in CI. The goal is fast feedback on regressions without heavy fixtures.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="growth">
+    <h2 id="growth">Growth Reflection</h2>
+    <p>I entered the program comfortable with single-file solutions and quick fixes. Over time I learned to design for the next developer. That means smaller modules with a single purpose, data models that reflect real usage, defensive boundaries at the edges, and steady communication with reviewers and stakeholders. The result is a codebase that is simpler to read, safer to change, and easier to test.</p>
+  </section>
+
+  <section aria-labelledby="next-steps">
+    <h2 id="next-steps">Next Steps</h2>
+    <div class="grid cols-2">
+      <article class="card">
+        <h3>Planned Enhancements</h3>
+        <ul class="list">
+          <li>Introduce basic API contract tests around auth and settings</li>
+          <li>Add rate limiting on login to reduce automated guessing attempts</li>
+          <li>Harden input validation with shared schemas between client and server where appropriate</li>
+          <li>Expand logging fields for observability without exposing sensitive data</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Team Practices</h3>
+        <ul class="list">
+          <li>Keep change size small, keep feedback fast</li>
+          <li>Prefer documented helpers over repeating inline logic</li>
+          <li>Write short stakeholder notes that explain impact and risk</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="details">
+    <h2 id="details">Detailed Evidence and Rationale</h2>
+    <article class="card">
+      <h3>Design Choices</h3>
+      <ul class="list">
+        <li><strong>Separation of concerns</strong> keeps cryptography, validation, and persistence isolated so each part can be tested and changed without side effects.</li>
+        <li><strong>Allow-list validation</strong> blocks accidental attribute escalation and keeps handlers simple.</li>
+        <li><strong>Schema defaults and constraints</strong> turn runtime checks into data guarantees, which reduces code in callers and prevents malformed records.</li>
+        <li><strong>Consistent error shapes</strong> make failures predictable for clients and easier to observe in logs and dashboards.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Security Considerations</h3>
+      <ul class="list">
+        <li>Passwords are never stored in a reversible format and are hashed with a per-record salt.</li>
+        <li>Secrets are loaded from the environment and never committed to the repository.</li>
+        <li>Responses avoid leaking internal structure or hints that could help user enumeration.</li>
+        <li>Database updates operate with least privilege and project only the fields that are needed.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Developer Experience</h3>
+      <ul class="list">
+        <li>Small PRs with checklists, short videos, and rollback notes make review faster and clearer.</li>
+        <li>Helpers and JSDoc reduce onboarding time by making intent explicit.</li>
+        <li>Predictable flows mean fewer places to instrument and fewer places to debug.</li>
+      </ul>
+    </article>
+
+    <p class="note">The guiding idea is simple. Design code so that a new teammate can extend it in one sitting without guessing about hidden contracts or side effects.</p>
+  </section>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <small>© <span id="y"></span> Merrik Wright</small>
 </footer>
+
 <script>
+  // Current year and external-link behavior
   document.getElementById('y').textContent = new Date().getFullYear();
   for (const a of document.querySelectorAll('a[href^="http"]')) {
     if (a.host !== location.host) { a.target = "_blank"; a.rel = "noopener"; }
