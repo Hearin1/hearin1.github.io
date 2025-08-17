@@ -6,40 +6,60 @@
   <title>Code Review – CS-499</title>
   <meta name="description" content="Informal code review video: existing functionality, code analysis, planned enhancements, and outcome alignment." />
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .site-header { border-bottom: 1px solid #e2e8f0; background:#fff; position: sticky; top: 0; z-index: 50; }
+    .nav { display: flex; gap: 1rem; align-items: center; padding: .75rem 1rem; max-width:1100px; margin:0 auto; }
+    .nav .brand { font-weight: 700; color: #0b3d5c; text-decoration: none; margin-right: auto; }
+    .nav a { color: #0f172a; text-decoration: none; padding: .25rem .5rem; border-radius: .375rem; }
+    .nav a.active, .nav a[aria-current="page"] { background: #e6f1f8; color: #0b3d5c; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+    .video { margin: 1.5rem 0; display: flex; justify-content: center; }
+    .checklist { list-style: none; padding-left: 1.2rem; }
+    .checklist li::before { content: "✔ "; color: #0b3d5c; font-weight: bold; }
+    footer.site-footer { border-top: 1px solid #e2e8f0; padding: 1rem; margin-top: 2rem; color: #475569; text-align:center; }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav">
+<a class="sr-only" href="#main">Skip to content</a>
+
+<!-- Header (same as other pages) -->
+<header class="site-header" role="banner">
+  <nav class="nav" aria-label="Primary">
     <a class="brand" href="/">Merrik Wright</a>
-    <a href="/self-assessment.html">Self-Assessment</a>
-    <a href="/artifacts/travlr.html">TRAVLR Artifact</a>
-    <a class="active" href="/code-review.html">Code Review</a>
+    <a href="index.html">Home</a>
+    <a href="self-assessment.html">Self-Assessment</a>
+    <a href="artifacts/travlr.html">TRAVLR Artifact</a>
+    <a class="active" aria-current="page" href="code-review.html">Code Review</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<main class="container">
+<main id="main" class="container" role="main">
   <h1>Informal Code Review (Video)</h1>
-  <p>This screencast walks through original functionality, identifies improvement targets (structure, logic, efficiency, security, testing, documentation), and previews the enhancements that address them.</p>
+  <p>This screencast walks through original functionality, identifies improvement targets in structure, logic, efficiency, security, testing, and documentation, and previews the enhancements that address them.</p>
+
   <div class="video">
     <iframe width="560" height="315"
       src="https://www.youtube.com/embed/VIDEO_ID"
       title="CS-499 Code Review"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
   </div>
 
   <h2>Highlights</h2>
   <ul class="checklist">
     <li>Existing functionality overview</li>
-    <li>Code analysis (structure, security, testing, documentation)</li>
-    <li>Planned enhancements and outcome mapping</li>
+    <li>Code analysis covering structure, documentation, and defensive programming</li>
+    <li>Planned enhancements and alignment with course outcomes</li>
   </ul>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <small>© <span id="y"></span> Merrik Wright</small>
 </footer>
+
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
   for (const a of document.querySelectorAll('a[href^="http"]')) {
