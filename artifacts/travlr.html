@@ -1,1 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TRAVLR Artifact – CS-499</title>
+  <meta name="description" content="TRAVLR full-stack artifact with enhancements across software design, algorithms/data structures, and databases, plus reflection and outcome mapping." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="/">Merrik Wright</a>
+    <a href="/self-assessment.html">Self-Assessment</a>
+    <a class="active" href="/artifacts/travlr.html">TRAVLR Artifact</a>
+    <a href="/code-review.html">Code Review</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>TRAVLR Artifact Narrative</h1>
+
+  <p><strong>Overview.</strong> TRAVLR is a full-stack travel booking platform built with the MEAN stack (MongoDB, Express.js, Angular, Node.js). Users browse and reserve trips; admins manage listings. For CS-499, I enhanced the system across three categories—software design & engineering, algorithms & data structures, and databases—while maintaining a security-first approach.</p>
+
+  <h2>Why TRAVLR</h2>
+  <p>It’s a realistic, end-to-end app that let me demonstrate full-stack integration, modular architecture, and secure data handling. It also provided clear points to measure growth versus the original version.</p>
+
+  <h2>Enhancements</h2>
+  <h3>Software Design & Engineering</h3>
+  <ul>
+    <li>Added an <strong>encryption & decryption utility</strong> (AES for data handling) and <strong>bcrypt hashing</strong> for credentials.</li>
+    <li>Introduced a <strong>modular account-settings feature</strong> with routes for registration, login, and settings updates.</li>
+    <li>Refactored API logic for readability, reusability, and maintainability; improved comments and structure.</li>
+  </ul>
+
+  <h3>Algorithms & Data Structures</h3>
+  <ul>
+    <li>Hardened the <strong>authentication algorithm</strong> (salted hashing, validation flow, early failure paths).</li>
+    <li>Reduced redundant logic; streamlined request handling and input checks.</li>
+    <li>Defensive programming for input validation and consistent data types before DB ops.</li>
+  </ul>
+
+  <h3>Databases</h3>
+  <ul>
+    <li>Extended the <strong>MongoDB schema</strong> for user accounts & settings.</li>
+    <li>Implemented CRUD for settings with validation and secure integration.</li>
+    <li>Set sensible indexes and constraints for efficiency and integrity.</li>
+  </ul>
+
+  <h2>Reflection</h2>
+  <p>Integrating encryption and secure auth reinforced secure-coding practices (hashing vs. reversible storage, validation, least privilege). Schema updates tied back to database design principles and clarity between models. Refactoring improved testability and made future features easier. Debugging async issues around hashing and schema changes drove a disciplined, iterative test approach.</p>
+
+  <h2>Course Outcomes Met</h2>
+  <ul class="compact">
+    <li><strong>Collaboration & Communication:</strong> structured code review, clear documentation of endpoints and decisions.</li>
+    <li><strong>Computing Solutions:</strong> secure credential management and extensible settings solved concrete product problems.</li>
+    <li><strong>Innovative Techniques:</strong> modern crypto practices and schema evolution aligned to industry needs.</li>
+    <li><strong>Security Mindset:</strong> encryption, hashing, validation, and mitigation of common risks.</li>
+  </ul>
+
+  <h2>Source Links</h2>
+  <p>Original code: <a href="https://github.com/Hearin1/CS465-Fullstack">view repository/branch</a><br/>
+     Enhanced code: <a href="https://github.com/Hearin1/CS499/tree/TRAVLR-Folder-for-review">view repository/branch</a></p>
+
+  <p class="note">Tip: include short screenshots or code snippets if you want extra polish.</p>
+</main>
+
+<footer class="site-footer">
+  <small>© <span id="y"></span> Merrik Wright</small>
+</footer>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  for (const a of document.querySelectorAll('a[href^="http"]')) {
+    if (a.host !== location.host) { a.target = "_blank"; a.rel = "noopener"; }
+  }
+</script>
+</body>
+</html>
 
