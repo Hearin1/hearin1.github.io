@@ -5,95 +5,235 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Merrik Wright – CS-499 ePortfolio</title>
-  <meta name="description" content="CS-499 ePortfolio showcasing self-assessment, enhanced TRAVLR artifact, and a code-review screencast." />
+  <meta name="description" content="CS-499 ePortfolio for Merrik Wright. Explore the professional self-assessment, the enhanced TRAVLR artifact, and a recorded code review." />
 
   <!-- Social preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Merrik Wright – CS-499 ePortfolio">
   <meta property="og:description" content="Self-assessment, artifact enhancements, and code-review screencast.">
-  <meta property="og:url" content="https://hearin1.github.io/">
   <meta property="og:image" content="/assets/img/preview.jpg">
 
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta name="theme-color" content="#0b3d5c" />
   <link rel="icon" href="/assets/img/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Light inline polish; header styles match self-assessment -->
+  <style>
+    :root{
+      --ink:#0f172a;--muted:#475569;--brand:#0b3d5c;--brand-2:#0f6fc2;
+      --card:#ffffff;--surface:#f8fafc;--border:#e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--ink); background:#fff; }
+    .container { max-width:1100px; margin:0 auto; padding:1.25rem; }
+
+    /* Header copied from self-assessment */
+    .site-header { border-bottom: 1px solid var(--border); background:#fff; position: sticky; top: 0; z-index: 50; }
+    .nav { display: flex; gap: 1rem; align-items: center; padding: .75rem 1rem; max-width:1100px; margin:0 auto; }
+    .nav .brand { font-weight: 700; color: var(--brand); text-decoration: none; margin-right: auto; }
+    .nav a { color: var(--ink); text-decoration: none; padding: .25rem .5rem; border-radius: .375rem; }
+    .nav a.active, .nav a[aria-current="page"] { background: #e6f1f8; color: var(--brand); }
+
+    .hero {
+      position:relative; overflow:hidden; color:#fff;
+      background: radial-gradient(1200px 600px at 10% 10%, #1769aa 0%, #0b3d5c 40%, #08293f 100%);
+    }
+    .hero .container { padding:3.25rem 1.25rem; display:grid; gap:1rem; }
+    .hero h1 { margin:0; font-size:clamp(1.9rem,3.5vw,2.6rem); line-height:1.2; }
+    .hero p { margin:0; color:#e6f6ff; max-width:60ch; }
+    .btn-row { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem; }
+    .btn, .btn.secondary {
+      display:inline-block; text-decoration:none; padding:.7rem 1rem; border-radius:.6rem;
+      font-weight:600; transition:transform .06s ease;
+    }
+    .btn { background:#ffffff; color:var(--brand); border:1px solid #fff; }
+    .btn.secondary { background:transparent; color:#fff; border:1px solid #9bd0ff; }
+    .btn:active, .btn.secondary:active { transform:translateY(1px); }
+
+    .section { padding:2.25rem 0 0; }
+    .lead { color:var(--muted); }
+    .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+    .card {
+      background:var(--card); border:1px solid var(--border); border-radius:.9rem; padding:1rem;
+      display:flex; flex-direction:column; gap:.5rem;
+    }
+    .card h3 { margin:.25rem 0; font-size:1.1rem; }
+    .hoverline { text-decoration:none; color:var(--brand-2); }
+    .hoverline:hover { text-decoration:underline; }
+    .pill {
+      display:inline-block; font-size:.85rem; padding:.25rem .55rem; border-radius:999px;
+      background:#eef6ff; color:#0b3d5c; border:1px solid #cfe6ff; margin:.15rem .15rem .15rem 0;
+    }
+    .two-col { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; }
+    .note {
+      background:var(--surface); border:1px dashed var(--border);
+      padding:.9rem; border-radius:.7rem; color:var(--muted);
+    }
+    .list { margin:.5rem 0 0; padding-left:1.2rem; }
+    .list li { margin:.35rem 0; }
+
+    footer.site-footer { margin-top:2.25rem; border-top:1px solid var(--border); }
+    footer .container { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 1.25rem; color:var(--muted); }
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  </style>
 </head>
 
 <body>
-  <!-- Navigation -->
-  <header class="site-header">
-    <nav class="navbar">
-      <div class="container">
-        <a class="logo" href="index.html">Merrik Wright</a>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="self-assessment.html">Self-Assessment</a></li>
-          <li><a href="artifacts/travlr.html">TRAVLR Artifact</a></li>
-          <li><a href="code-review.html">Code Review</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+<a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- Hero section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to My CS-499 ePortfolio</h1>
-      <p>Showcasing my growth in software design, algorithms, databases, and security.</p>
+<!-- Header (identical to self-assessment) -->
+<header class="site-header" role="banner">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="/">Merrik Wright</a>
+    <a class="active" aria-current="page" href="index.html">Home</a>
+    <a href="self-assessment.html">Self-Assessment</a>
+    <a href="artifacts/travlr.html">TRAVLR Artifact</a>
+    <a href="code-review.html">Code Review</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" role="region" aria-label="Welcome">
+  <div class="container">
+    <h1>CS-499 ePortfolio</h1>
+    <p>Explore my professional self-assessment, the enhanced TRAVLR full stack artifact, and a recorded code review. The focus is practical design, safe database work, and clear communication that supports fast iteration.</p>
+    <div class="btn-row">
       <a class="btn" href="self-assessment.html">Read Self-Assessment</a>
-      <a class="btn secondary" href="artifacts/travlr.html">View TRAVLR Project</a>
+      <a class="btn secondary" href="artifacts/travlr.html">Open TRAVLR</a>
+      <a class="btn secondary" href="code-review.html">Watch Code Review</a>
+    </div>
+  </div>
+</section>
+
+<main id="main" class="container" role="main">
+  <!-- About -->
+  <section class="section" aria-labelledby="about">
+    <h2 id="about">About This Portfolio</h2>
+    <p class="lead">This site collects my capstone outcomes. It highlights the specific changes I made to improve maintainability, security, and developer experience, and it explains why those changes matter to teammates and stakeholders.</p>
+    <div class="two-col">
+      <article class="card" aria-labelledby="about-focus">
+        <h3 id="about-focus">Focus Areas</h3>
+        <ul class="list">
+          <li>Separation of concerns with small, testable helpers</li>
+          <li>Secure authentication and input validation</li>
+          <li>MongoDB schema defaults, constraints, and safe migrations</li>
+          <li>Consistent error shapes and basic observability</li>
+          <li>Small pull requests with clear checklists and rollback notes</li>
+        </ul>
+      </article>
+      <article class="card" aria-labelledby="about-links">
+        <h3 id="about-links">Quick Links</h3>
+        <p>
+          <a class="hoverline" href="self-assessment.html">Self-Assessment</a><br>
+          <a class="hoverline" href="artifacts/travlr.html">TRAVLR Artifact</a><br>
+          <a class="hoverline" href="code-review.html">Code Review</a><br>
+          <a class="hoverline" href="contact.html">Contact</a>
+        </p>
+        <p class="note">Internal links open in the same tab. External links open in a new tab for clarity.</p>
+      </article>
     </div>
   </section>
 
   <!-- Explore cards -->
-  <main class="container" style="margin-top:3rem;">
-    <h2>Explore</h2>
-    <div class="cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
-      
-      <article class="card">
-        <div class="card-content">
-          <h3 class="card-title">Self-Assessment</h3>
-          <p>A professional reflection on collaboration, algorithms, engineering, databases, and security.</p>
-          <p><a class="hoverline" href="self-assessment.html">Open self-assessment →</a></p>
-        </div>
+  <section class="section" aria-labelledby="explore">
+    <h2 id="explore">Explore</h2>
+    <div class="cards-grid">
+      <article class="card" aria-labelledby="card-sa">
+        <h3 id="card-sa">Professional Self-Assessment</h3>
+        <p>A reflection on collaboration, algorithms, engineering, databases, and security. Written for clear review and traceable decisions.</p>
+        <p><a class="hoverline" href="self-assessment.html">Open self-assessment</a></p>
       </article>
 
-      <article class="card">
-        <div class="card-content">
-          <h3 class="card-title">TRAVLR Artifact</h3>
-          <p>Enhanced full-stack MEAN app with encryption, schema updates, and modular design improvements.</p>
-          <p><a class="hoverline" href="artifacts/travlr.html">View TRAVLR narrative →</a></p>
-        </div>
+      <article class="card" aria-labelledby="card-travlr">
+        <h3 id="card-travlr">TRAVLR Artifact</h3>
+        <p>Enhanced MEAN app with a focused login and settings flow, an encryption utility, safer schema design, and predictable updates.</p>
+        <p><a class="hoverline" href="artifacts/travlr.html">View TRAVLR</a></p>
       </article>
 
-      <article class="card">
-        <div class="card-content">
-          <h3 class="card-title">Code Review</h3>
-          <p>A recorded walkthrough of existing code, issues, and enhancements with clear commentary.</p>
-          <p><a class="hoverline" href="code-review.html">Watch screencast →</a></p>
-        </div>
+      <article class="card" aria-labelledby="card-review">
+        <h3 id="card-review">Code Review</h3>
+        <p>A recorded walkthrough of existing code and enhancement decisions. Shows reasoning, tradeoffs, and outcomes.</p>
+        <p><a class="hoverline" href="code-review.html">Watch screencast</a></p>
       </article>
     </div>
-  </main>
-
-  <!-- Contact -->
-  <section class="container" style="margin-top:3rem;">
-    <h2>Contact</h2>
-    <p>Email: <a class="hoverline" href="mailto:merrik.wright@snhu.edu">merrik.wright@snhu.edu</a></p>
-    <p>GitHub: <a class="hoverline" href="https://github.com/Hearin1" target="_blank" rel="noopener">github.com/Hearin1</a></p>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <small>© <span id="y"></span> Merrik Wright</small>
-  </footer>
+  <!-- Outcomes -->
+  <section class="section" aria-labelledby="outcomes">
+    <h2 id="outcomes">Outcomes at a Glance</h2>
+    <p class="lead">These tags summarize the areas represented in the artifacts.</p>
+    <p>
+      <span class="pill" aria-label="Software design">Software design</span>
+      <span class="pill" aria-label="Algorithms and data structures">Algorithms and data structures</span>
+      <span class="pill" aria-label="Databases">Databases</span>
+      <span class="pill" aria-label="Security">Security</span>
+      <span class="pill" aria-label="Collaboration and communication">Collaboration and communication</span>
+      <span class="pill" aria-label="UX and accessibility">UX and accessibility</span>
+    </p>
+  </section>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    // External links open in new tab
-    for (const a of document.querySelectorAll('a[href^=\"http\"]')) {
-      if (a.host !== location.host) { a.target = \"_blank\"; a.rel = \"noopener\"; }
+  <!-- What's New -->
+  <section class="section" aria-labelledby="whats-new">
+    <h2 id="whats-new">What’s New</h2>
+    <div class="two-col">
+      <article class="card">
+        <h3>Latest Iterations</h3>
+        <ul class="list">
+          <li>Refined settings validation with a single helper used by both routes</li>
+          <li>Moved cryptographic logic into <code>util/encryption.js</code></li>
+          <li>Standardized error payloads and status codes across handlers</li>
+          <li>Added schema defaults and a small backfill routine for older docs</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Planned Next Steps</h3>
+        <ul class="list">
+          <li>Add simple API contract checks in CI for login and settings</li>
+          <li>Introduce basic rate limiting on login attempts</li>
+          <li>Share validation schemas between client and server where it makes sense</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" aria-labelledby="contact">
+    <h2 id="contact">Contact</h2>
+    <p>Email: <a class="hoverline" href="mailto:merrik.wright@snhu.edu">merrik.wright@snhu.edu</a></p>
+    <p>GitHub: <a class="hoverline" href="https://github.com/Hearin1">github.com/Hearin1</a></p>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <small>© <span id="y"></span> Merrik Wright</small>
+    <small>Last updated <time id="lu" aria-label="Last updated date"></time></small>
+  </div>
+</footer>
+
+<script>
+  // Year and Last Updated
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const d = new Date(document.lastModified);
+  document.getElementById('lu').textContent = d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+
+  // External links open in a new tab
+  for (const a of document.querySelectorAll('a[href^="http"]')) {
+    if (a.host !== location.host) { a.target = "_blank"; a.rel = "noopener"; }
+  }
+
+  // Auto-highlight current nav link by path if needed
+  const here = location.pathname.split("/").pop() || "index.html";
+  for (const link of document.querySelectorAll(".nav a")) {
+    const href = link.getAttribute("href");
+    if (href === here && !link.hasAttribute("aria-current")) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
     }
-  </script>
+  }
+</script>
 </body>
 </html>
